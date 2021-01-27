@@ -1,3 +1,5 @@
+package src;
+
 public class Room {
   private String description;
   private Room eastExit;
