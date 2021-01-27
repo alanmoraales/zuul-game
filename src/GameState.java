@@ -1,3 +1,5 @@
+package src;
+
 public class GameState {
   private boolean isPlaying;
   private Room currentRoom;
