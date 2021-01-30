@@ -3,7 +3,7 @@ package src;
 public class Quit extends Command {
 
 	@Override
-	public void run(GameState gameState) {
-		gameState.setPlaying(false);
+	public void run(GameState currentState) {
+		currentState.setPlaying(false);
 	}
 }
