@@ -8,19 +8,19 @@ public class Go extends Command{
 	public void run(GameState currentState) {
 
 		if(this.directions.contains(destiny)) {
-			if(destiny == "north") {
+			if(destiny.equals("north")) {
 				Room newRoom = currentState.getCurrentRoom().getNorthExit();
 				currentState.setCurrentRoom(newRoom);
 			}
-			if(destiny == "east") {
+			if(destiny.equals("east")) {
 				Room newRoom = currentState.getCurrentRoom().getEastExit();
 				currentState.setCurrentRoom(newRoom);
 			}
-			if(destiny == "south") {
+			if(destiny.equals("south")) {
 				Room newRoom = currentState.getCurrentRoom().getSouthExit();
 				currentState.setCurrentRoom(newRoom);
 			}
-			if(destiny == "west") {
+			if(destiny.equals("west")) {
 				Room newRoom = currentState.getCurrentRoom().getWestExit();
 				currentState.setCurrentRoom(newRoom);
 			}
