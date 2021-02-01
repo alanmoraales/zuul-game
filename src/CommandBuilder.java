@@ -9,12 +9,24 @@ public class CommandBuilder {
 		ConsoleReader getCommandInput = new ConsoleReader();	
 		String commandInput = new String();
 		commandInput = getCommandInput.readCommand();
+		var commandArray = commandInput.split(" ");
+		var commandWord = "";
+		var commandParam = "";
+
+		if (commandArray.length > 0) {
+			commandWord = commandArray[0];
+		}
+
+		if (commandArray.length > 1) {
+			commandParam = commandArray[1];
+		}
 		
-		switch(commandInput)
+		switch(commandWord)
 		{
 			   
 			   case "go" :
-			       Go commandGo = new Go();
+						Go commandGo = new Go();
+						 commandGo.setDestiny(commandParam);
 			       command = commandGo;
 			      break;
 			   
