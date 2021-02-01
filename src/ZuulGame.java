@@ -15,8 +15,14 @@ public class ZuulGame {
     this.printWelcome();
 
     while (this.currentState.isPlaying()) {
-      var userCommand = this.commandBuilder.getCommand();
-      userCommand.run(this.currentState);
+      try {
+		    var userCommand = this.commandBuilder.getCommand();
+        userCommand.run(this.currentState);
+        this.currentState.getCurrentRoom().printDescription();
+        this.currentState.getCurrentRoom().printAvailableExist();
+	    } catch (UnknownCommandException e) {
+          System.out.println("Unknown command, type 'help' to see available commands");
+	    }
     }
 
     this.printGoodBye();
