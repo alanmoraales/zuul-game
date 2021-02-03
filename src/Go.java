@@ -1,6 +1,6 @@
 package src;
 
-public class Go extends Command{
+public class Go extends Command {
 	private String destiny;
 
 	@Override

@@ -1,6 +1,6 @@
 package src;
 
-public class Help extends Command{
+public class Help extends Command {
 	@Override
   public void run(GameState currentGameState) {
 	  currentGameState.setPlaying(true);
