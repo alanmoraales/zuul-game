@@ -1,7 +1,6 @@
 package src;
 
 public class Go extends Command{
-
 	private String destiny;
 
 	@Override
@@ -30,11 +29,10 @@ public class Go extends Command{
 	  } else {
 	  	System.out.println("That exit doesn't exists");
 	  }
-
-
 	}
 
   public void setDestiny(String destiny) {
 	  this.destiny = destiny;
-  }
+	}
+	
 }
