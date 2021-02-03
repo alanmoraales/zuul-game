@@ -6,7 +6,7 @@ public class Go extends Command{
 
 	@Override
 	public void run(GameState currentState) {
-	  Room newRoom = null;
+	  var newRoom = new Room();
 
 	  if(this.directions.contains(destiny)) {
 		  if(destiny.equals("north")) {
