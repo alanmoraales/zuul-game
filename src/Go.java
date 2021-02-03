@@ -4,24 +4,24 @@ public class Go extends Command{
 	private String destiny;
 
 	@Override
-	public void run(GameState currentState) {
+	public void run(GameState currentGameState) {
 	  var newRoom = new Room();
 
-	  if(this.directions.contains(destiny)) {
+	  if(this.availableExits.contains(destiny)) {
 		  if(destiny.equals("north")) {
-			  newRoom = currentState.getCurrentRoom().getNorthExit();
+			  newRoom = currentGameState.getCurrentRoom().getNorthExit();
 			}
 			
 		  if(destiny.equals("east")) {
-		  	newRoom = currentState.getCurrentRoom().getEastExit();
+		  	newRoom = currentGameState.getCurrentRoom().getEastExit();
 			}
 			
 		  if(destiny.equals("south")) {
-		  	newRoom = currentState.getCurrentRoom().getSouthExit();
+		  	newRoom = currentGameState.getCurrentRoom().getSouthExit();
 			}
 			
 		  if(destiny.equals("west")) {
-		  	newRoom = currentState.getCurrentRoom().getWestExit();
+		  	newRoom = currentGameState.getCurrentRoom().getWestExit();
 			}
 			
 	  } else {
@@ -29,7 +29,7 @@ public class Go extends Command{
 	  }
 
 	  if(newRoom != null) {
-	  	currentState.setCurrentRoom(newRoom);
+	  	currentGameState.setCurrentRoom(newRoom);
 	  } else {
 	  	System.out.println("That exit doesn't exists");
 		}
