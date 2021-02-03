@@ -5,4 +5,5 @@ public class Quit extends Command {
   public void run(GameState currentState) {
     currentState.setPlaying(false);
 	}
+	
 }

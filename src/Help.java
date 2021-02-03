@@ -10,4 +10,5 @@ public class Help extends Command{
     System.out.println("Your command words are:");
     System.out.println("   go quit help");
 	}
+	
 }

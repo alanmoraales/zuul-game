@@ -10,16 +10,20 @@ public class Go extends Command{
 	  if(this.directions.contains(destiny)) {
 		  if(destiny.equals("north")) {
 			  newRoom = currentState.getCurrentRoom().getNorthExit();
-		  }
+			}
+			
 		  if(destiny.equals("east")) {
 		  	newRoom = currentState.getCurrentRoom().getEastExit();
-		  }
+			}
+			
 		  if(destiny.equals("south")) {
 		  	newRoom = currentState.getCurrentRoom().getSouthExit();
-		  }
+			}
+			
 		  if(destiny.equals("west")) {
 		  	newRoom = currentState.getCurrentRoom().getWestExit();
-		  }
+			}
+			
 	  } else {
 	  	System.out.println("That exit doesn't exists");
 	  }
@@ -28,7 +32,8 @@ public class Go extends Command{
 	  	currentState.setCurrentRoom(newRoom);
 	  } else {
 	  	System.out.println("That exit doesn't exists");
-	  }
+		}
+		
 	}
 
   public void setDestiny(String destiny) {
