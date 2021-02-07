@@ -1,6 +1,6 @@
 package src;
 
-public class Quit extends Command {
+public class Quit implements Command {
 
 	@Override
 	public void run(GameState currentState) {

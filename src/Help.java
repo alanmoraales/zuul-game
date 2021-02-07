@@ -1,6 +1,6 @@
 package src;
 
-public class Help extends Command{
+public class Help implements Command{
 
 	@Override
 	public void run(GameState currentState) {

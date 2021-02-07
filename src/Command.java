@@ -1,8 +1,5 @@
 package src;
 
-import java.util.ArrayList;
-
-public abstract class Command {
-
+public interface Command {
     public abstract void run(GameState currentState);
 }
