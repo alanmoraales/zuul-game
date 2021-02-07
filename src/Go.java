@@ -1,14 +1,24 @@
 package src;
 
+import java.util.ArrayList;
+
 public class Go extends Command{
 
+	protected ArrayList<String> directions = new ArrayList<String>();
 	private String destiny;
+
+	public Go() {
+		directions.add("north");
+  	directions.add("east");
+    directions.add("south");
+    directions.add("west");
+	}
 
 	@Override
 	public void run(GameState currentState) {
 		Room newRoom = null;
 
-		if(this.directions.contains(destiny)) {
+		if(directions.contains(destiny)) {
 			if(destiny.equals("north")) {
 				newRoom = currentState.getCurrentRoom().getNorthExit();
 			}
@@ -30,8 +40,6 @@ public class Go extends Command{
 		} else {
 			System.out.println("That exit doesn't exists");
 		}
-
-
 	}
 
 	public void setDestiny(String destiny) {
