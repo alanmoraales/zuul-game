@@ -1,8 +1,9 @@
 package src;
 
+public class UnknownCommandException extends Exception {
+  private static final long serialVersionUID = 1L;
 
-public class UnknownCommandException extends Exception { 
-    public UnknownCommandException(String errorMessage) {
-        super(errorMessage);
-    }
+  public UnknownCommandException(String errorMessage) {
+    super(errorMessage);
+  }
 }
