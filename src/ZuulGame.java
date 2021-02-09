@@ -40,6 +40,7 @@ public class ZuulGame {
   }
 
   private void printGoodBye() {
+    System.out.println();
     System.out.println("Thank you for playing.  Good bye.");
   }
 
