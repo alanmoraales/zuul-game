@@ -5,8 +5,7 @@ public class CommandBuilder {
   public Command getCommand() throws UnknownCommandException {
     Command command = null;
 	var getCommandInput = new ConsoleReader();	
-	var commandInput = new String();
-	commandInput = getCommandInput.readCommand();
+	var commandInput = getCommandInput.readCommand();
 	    
 	var commandArray = commandInput.split(" ");
 	var commandWord = "";
@@ -24,26 +23,19 @@ public class CommandBuilder {
 	  case "go" :
 	    var commandGo = new Go();
 		commandGo.setDestiny(commandParam);
-		command = commandGo;
-		break;
+		return commandGo;
 		
       case "help" :
-		var commandHelp = new Help();
-		command = commandHelp;
-		break; 
+		return new Help();
+		
 		
       case "quit" :
-		var commandQuit = new Quit();
-		command = commandQuit;
-		break; 	
+		return new Quit(); 	
 
       default : 
 		throw new UnknownCommandException("Unknown command, try again" );
 		
-	}
-
-	return command;
-		
+	}	
   }
 }
 
