@@ -1,36 +1,38 @@
 package src;
 
+import java.util.HashMap;
+
 public class Room {
   private String description;
-  private Room eastExit;
-  private Room westExit;
-  private Room southExit;
-  private Room northExit;
+  private HashMap<String, Room> exits;
+
+  public Room() {
+    this.exits = new HashMap<>();
+  }
 
   public void printDescription() {
     System.out.println(this.getDescription());
   }
 
   public void printAvailableExist() {
+    var availableExits = this.exits.keySet();
+
     System.out.print("Exits: ");
-    
-    if (this.northExit != null) {
-      System.out.print("north ");
-    }
-    
-    if (this.eastExit != null) {
-      System.out.print("east ");
-    }
-    
-    if (this.southExit != null) {
-      System.out.print("south ");
-    }
-    
-    if (this.westExit != null) {
-      System.out.print("west ");
-    }
-    
+    availableExits.forEach(exitName -> {
+      System.out.print(String.format("%s ", exitName));
+    });
+
     System.out.println();
+  }
+
+  public Room getRoom(String roomName) throws NotExistingRoomException {
+    var room = this.exits.get(roomName);
+
+    if (room == null) {
+      throw new NotExistingRoomException("That exit doesn't exists");
+    }
+
+    return room;
   }
 
   public String getDescription() {
@@ -41,35 +43,19 @@ public class Room {
     this.description = description;
   }
 
-  public Room getEastExit() {
-    return eastExit;
-  }
-
   public void setEastExit(Room eastExit) {
-    this.eastExit = eastExit;
-  }
-
-  public Room getWestExit() {
-    return westExit;
+    this.exits.put("east", eastExit);
   }
 
   public void setWestExit(Room westExit) {
-    this.westExit = westExit;
-  }
-
-  public Room getSouthExit() {
-    return southExit;
+    this.exits.put("west", westExit);
   }
 
   public void setSouthExit(Room southExit) {
-    this.southExit = southExit;
+    this.exits.put("south", southExit);
   }
 
-  public Room getNorthExit() {
-    return northExit;
-  }
-  
   public void setNorthExit(Room northExit) {
-    this.northExit = northExit;
+    this.exits.put("north", northExit);
   }
 }
