@@ -9,19 +9,19 @@ public class Main {
 
   public static Room createRoomsAndGetInitialRoom() {
     var outside = new Room();
-    outside.setDescription("outside the main entrance of the university");
+    outside.setDescription("You're outside the main entrance of the university");
 
     var theatre = new Room();
-    theatre.setDescription("in a lecture theatre");
+    theatre.setDescription("You're in a lecture theatre");
 
     var pub = new Room();
-    pub.setDescription("in the campus pub");
+    pub.setDescription("You're in the campus pub");
 
     var lab = new Room();
-    lab.setDescription("in a computing lab");
+    lab.setDescription("You're in a computing lab");
 
     var office = new Room();
-    office.setDescription("in the computing admin office");
+    office.setDescription("You're in the computing admin office");
 
     outside.setEastExit(theatre);
     outside.setSouthExit(lab);
