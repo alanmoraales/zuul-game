@@ -1,6 +1,6 @@
 package src;
 
-public class Go extends Command {
+public class Go implements Command {
 	private String destiny;
 
 	@Override
@@ -11,11 +11,9 @@ public class Go extends Command {
 		} catch (NotExistingRoomException e) {
 			System.out.println(e.getMessage());
 		}
-
 	}
 
 	public void setDestiny(String destiny) {
 		this.destiny = destiny;
 	}
-
 }
