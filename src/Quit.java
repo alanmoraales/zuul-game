@@ -1,8 +1,5 @@
 package src;
 
-public class Quit implements Command {
-
-=======
 public class Quit extends Command {
 
 	@Override
