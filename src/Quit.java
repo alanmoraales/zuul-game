@@ -1,10 +1,9 @@
 package src;
 
-public class Quit extends Command {
+public class Quit implements Command {
 
 	@Override
-  public void run(GameState currentGameState) {
-    currentGameState.setPlaying(false);
+	public void run(GameState currentState) {
+		currentState.setPlaying(false);
 	}
-
 }
