@@ -20,11 +20,16 @@ public class ZuulGame {
         var userCommand = this.commandBuilder.getCommand();
         userCommand.run(this.currentState);
       } catch (UnknownCommandException e) {
-        System.out.println("Unknown command, type 'help' to see available commands");
+        printUnknownCommandMessage();
       }
     }
 
     this.printGoodBye();
+  }
+
+  private void printUnknownCommandMessage() {
+    System.out.println();
+    System.out.println("Unknown command, type 'help' to see available commands");
   }
 
   private void printStatus() {
