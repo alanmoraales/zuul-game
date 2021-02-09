@@ -16,16 +16,22 @@ public class ZuulGame {
 
     while (this.currentState.isPlaying()) {
       try {
-		    var userCommand = this.commandBuilder.getCommand();
+        printStatus();
+        var userCommand = this.commandBuilder.getCommand();
         userCommand.run(this.currentState);
-        this.currentState.getCurrentRoom().printDescription();
-        this.currentState.getCurrentRoom().printAvailableExist();
-	    } catch (UnknownCommandException e) {
-          System.out.println("Unknown command, type 'help' to see available commands");
-	    }
+      } catch (UnknownCommandException e) {
+        System.out.println("Unknown command, type 'help' to see available commands");
+      }
     }
 
     this.printGoodBye();
+  }
+
+  private void printStatus() {
+    System.out.println();
+    this.currentState.getCurrentRoom().printDescription();
+    this.currentState.getCurrentRoom().printAvailableExist();
+    System.out.println();
   }
 
   private void printGoodBye() {
@@ -37,9 +43,6 @@ public class ZuulGame {
     System.out.println("Welcome to the World of Zuul!");
     System.out.println("World of Zuul is a new, incredibly boring adventure game.");
     System.out.println("Type 'help' if you need help.");
-    System.out.println();
-    this.currentState.getCurrentRoom().printDescription();
-    this.currentState.getCurrentRoom().printAvailableExist();
     System.out.println();
   }
 }
